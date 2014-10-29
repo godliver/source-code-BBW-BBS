@@ -1,0 +1,41 @@
+
+This is the implementation of Automated Vision-Based Diagnosis of Banana Bacterial Wilt Black sigatoka diseases.
+The project was built on python platform with opencv2 and sklearn. 
+
+To set up the shapefeatures library, first compile it by running
+./build.sh
+
+Utils_shape				->	creates shape feature vectors.
+Run	extract_shape		-> 	to save the files
+find_best_feature		->	selects the best shape features based on feature importance
+Utils_shape_and_color	->	creates color and shapefeature vectors.
+Run Auc 				-> output are the roc-graphs
+Run Predict.py			-> to predict the class of an image. Supply a sample image.
+
+
+The list of attributes which can be chosen from is as follows:
+
+    0: Area
+    1: Area of min. enclosing rectangle
+    2: Square of diagonal of min. enclosing rectangle
+    3: Cityblock perimeter
+    4: Cityblock complexity (Perimeter/Area)
+    5: Cityblock simplicity (Area/Perimeter)
+    6: Cityblock compactness (Perimeter^2/(4*PI*Area))
+    7: Large perimeter
+    8: Large compactness (Perimeter^2/(4*PI*Area))
+    9: Small perimeter
+    10: Small compactness (Perimeter^2/(4*PI*Area))
+    11: Moment of Inertia
+    12: Elongation: (Moment of Inertia) / (area)^2
+    13: Mean X position
+    14: Mean Y position
+    15: Jaggedness: Area*Perimeter^2/(8*PI^2*Inertia)
+    16: Entropy
+    17: Lambda-max (Max.child gray level - current gray level)
+    18: Gray level
+    
+Attributes that were considered here are [12,9,13,10,11,1]
+
+
+
